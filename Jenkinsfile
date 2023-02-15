@@ -11,10 +11,10 @@ pipeline {
         stage("Stage 2"){
             steps{
                 echo "Stage 2"
-                script{
+               // script{
                     echo vcCredentials.usernameVariable
                     echo vcCredentials.credentialsId
-                }
+               // }
             }
         }
         stage("stage 3"){
