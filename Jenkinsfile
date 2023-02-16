@@ -5,7 +5,7 @@ pipeline {
         stage("Stage 1"){
             steps {
                 echo "stage 1"
-                vcUrl()
+                echo vcUrl.vcUrl
             }
         }
         stage("Stage 2"){
