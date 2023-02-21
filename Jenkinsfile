@@ -2,10 +2,9 @@
 pipeline {
     agent any
     stages {
-        stage("Stage 1"){
+        stage("Build Dockerfile"){
             steps {
-                echo "stage 1"
-                echo vcUrl.vcUrl
+                buildDockerFile()
             }
         }
         stage("Stage 2"){
