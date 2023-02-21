@@ -4,8 +4,10 @@ pipeline {
     stages {
         stage("CredentialCheck"){
             steps {
-                echo 'security-API-user'
-                echo 'security_API_user'
+                creds1 = credentials('security-API-user')
+                creds2 = credentials('security_API_user')
+                echo creds1
+                echo creds2
             }
         }
         stage("Stage 2"){
