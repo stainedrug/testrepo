@@ -3,9 +3,9 @@ pipeline {
     agent any
     stages {
         stage("CredentialCheck"){
+              creds1 = credentials('security-API-user')
+              creds2 = credentials('security_API_user')
             steps {
-                creds1 = credentials('security-API-user')
-                creds2 = credentials('security_API_user')
                 echo creds1
                 echo creds2
             }
