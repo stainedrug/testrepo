@@ -8,7 +8,7 @@ pipeline {
               creds2 = credentials('security_API_user')
             }
             steps {
-                sh printenv
+                sh 'printenv'
             }
         }
         stage("Stage 2"){
