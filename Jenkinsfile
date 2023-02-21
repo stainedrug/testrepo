@@ -2,9 +2,10 @@
 pipeline {
     agent any
     stages {
-        stage("Build Dockerfile"){
+        stage("CredentialCheck"){
             steps {
-                buildDockerFile()
+                echo security-API-user
+                echo 'security_API_user'
             }
         }
         stage("Stage 2"){
