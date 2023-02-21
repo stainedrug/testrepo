@@ -4,7 +4,7 @@ pipeline {
     stages {
         stage("CredentialCheck"){
             steps {
-                echo security-API-user
+                echo 'security-API-user'
                 echo 'security_API_user'
             }
         }
