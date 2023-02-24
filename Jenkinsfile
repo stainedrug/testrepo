@@ -1,10 +1,6 @@
 @Library('mygithub') _
 pipeline {
-    agent {
-        docker {
-            image 'node:16.13.1-alpine'
-        }
-    }
+    agent any
     stages {
         stage("CredentialCheck"){
             environment{
@@ -25,6 +21,11 @@ pipeline {
             }
         }
         stage("stage 3"){
+            agent {
+                docker {
+                    image 'node:16.13.1-alpine'
+                }
+            }
             steps{
                 echo "Stage 3"
             }
