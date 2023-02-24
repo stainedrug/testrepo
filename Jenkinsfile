@@ -1,6 +1,11 @@
 @Library('mygithub') _
 pipeline {
-    agent any
+    agent {
+        docker {
+            label 'docker'
+            image 'python:3.7'
+        }
+    }
     stages {
         stage("CredentialCheck"){
             environment{
