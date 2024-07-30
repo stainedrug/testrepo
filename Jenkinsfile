@@ -3,10 +3,11 @@ pipeline {
     agent any
     stages {
         stage("run cxone scan"){
-            credid = csCredentials.credentialsId
-            credusr = csCredentials.usernameVariable
-            credpas = csCredentials.usernamePassword
+            
            steps{
+               credid = csCredentials.credentialsId
+               credusr = csCredentials.usernameVariable
+               credpas = csCredentials.usernamePassword
          //      withCredentials([usernamePassword(credentialsId:${csCredentials.credentialsId}, passwordVariable: ${csCredentials.usernameVariable}, usernameVariable: ${csCredentials.usernamePassword})]) { 
          //         sh "echo ${security_user}"
          //         sh "echo ${security_pass}"
