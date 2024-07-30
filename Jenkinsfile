@@ -8,7 +8,7 @@ pipeline {
                 credUsr = csCredentials.usernameVariable
                 credPass = csCredentials.usernamePassword
             }
-         //  steps{
+           steps{
          //      withCredentials([usernamePassword(credentialsId:${csCredentials.credentialsId}, passwordVariable: ${csCredentials.usernameVariable}, usernameVariable: ${csCredentials.usernamePassword})]) { 
          //         sh "echo ${security_user}"
          //         sh "echo ${security_pass}"
