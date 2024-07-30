@@ -13,8 +13,9 @@ pipeline {
             steps{
                 echo "Stage 2"
                     script{
-                        echo vcCredentials.usernameVariable
                         echo vcCredentials.credentialsId
+                        echo vcCredentials.usernameVariable
+                        echo vcCredentials.passwordVariable
                     }
             }
         }
