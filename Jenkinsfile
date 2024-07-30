@@ -4,18 +4,18 @@ pipeline {
     stages {
         stage("CredentialCheck"){
             steps {
-                echo vcCredentials.credentialsId
-                echo vcCredentials.usernameVariable
-                echo vcCredentials.passwordVariable
+                echo csCredentials.credentialsId
+                echo csCredentials.usernameVariable
+                echo csCredentials.passwordVariable
             }
         }
         stage("Stage 2"){
             steps{
                 echo "Stage 2"
                     script{
-                        echo vcCredentials.credentialsId
-                        echo vcCredentials.usernameVariable
-                        echo vcCredentials.passwordVariable
+                        echo csCredentials.credentialsId
+                        echo csCredentials.usernameVariable
+                        echo csCredentials.passwordVariable
                     }
             }
         }
