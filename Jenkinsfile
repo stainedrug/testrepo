@@ -5,10 +5,11 @@ pipeline {
         stage("run cxone scan"){
             
            steps{
-               withCredentials([usernamePassword(credentialsId:${csCredentials.credentialsId}, passwordVariable: ${csCredentials.usernameVariable}, usernameVariable: ${csCredentials.usernamePassword})]) { 
-                  sh "echo ${security_user}"
-                  sh "echo ${security_pass}"
-           }
+          //     withCredentials([usernamePassword(credentialsId:${csCredentials.credentialsId}, passwordVariable: ${csCredentials.usernameVariable}, usernameVariable: ${csCredentials.usernamePassword})]) { 
+          //        sh "echo ${security_user}"
+          //        sh "echo ${security_pass}"
+          // }
+            sh "echo credentialsId:${csCredentials.credentialsId}, passwordVariable: ${csCredentials.usernameVariable}, usernameVariable: ${csCredentials.usernamePassword}
             sh 'printenv'
                 sh "echo 'Downloading CxOne CLI v${csEnvironment.cxVersion}'"
                 sh "wget -O ./cxcli.tar.gz 'https://github.com/Checkmarx/ast-cli/releases/download/${csEnvironment.cxVersion}/ast-cli_${csEnvironment.cxVersion}_linux_x64.tar.gz'"
