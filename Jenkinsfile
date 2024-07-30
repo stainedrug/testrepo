@@ -4,8 +4,8 @@ pipeline {
     stages {
         stage("CredentialCheck"){
             environment{
-              creds1 = credentials('security-API-user')
-              creds2 = credentials('security_API_user')
+              //creds1 = credentials('security-API-user')
+              //creds2 = credentials('security_API_user')
             }
             steps {
                 sh 'printenv'
@@ -15,8 +15,8 @@ pipeline {
             steps{
                 echo "Stage 2"
                // script{
-                    echo vcCredentials.usernameVariable
-                    echo vcCredentials.credentialsId
+                    //echo vcCredentials.usernameVariable
+                    //echo vcCredentials.credentialsId
                // }
             }
         }
