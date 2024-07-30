@@ -17,10 +17,10 @@ pipeline {
                     }
                 }
             }
-           steps{
-            sh "echo 'Downloading CxOne CLI v${csEnvironment.cxVersion}'"
-            sh "wget -O ./cxcli.tar.gz 'https://github.com/Checkmarx/ast-cli/releases/download/${csEnvironment.cxVersion}/ast-cli_${csEnvironment.cxVersion}_linux_x64.tar.gz'"
-            sh "tar xzvf ./cxcli.tar.gz"
+           //steps{
+           // sh "echo 'Downloading CxOne CLI v${csEnvironment.cxVersion}'"
+           // sh "wget -O ./cxcli.tar.gz 'https://github.com/Checkmarx/ast-cli/releases/download/${csEnvironment.cxVersion}/ast-cli_${csEnvironment.cxVersion}_linux_x64.tar.gz'"
+           // sh "tar xzvf ./cxcli.tar.gz"
             //sh """
             //    ./cx scan create -s ${env.WORKSPACE} \
             //    --project-name "${env.JOB_NAME}" \
@@ -35,7 +35,7 @@ pipeline {
             //    --report-pdf-email luis-vicente.soto-salinas@dxc.com \
             //    --wait-delay 60
             """
-           }
+           //}
         }
         stage("CredentialCheck"){
             steps {
