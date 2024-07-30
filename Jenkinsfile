@@ -3,10 +3,10 @@ pipeline {
     agent any
     stages {
         stage("CredentialCheck"){
-           // environment{
-              //creds1 = credentials('security-API-user')
-              //creds2 = credentials('security_API_user')
-          //  }
+            environment{
+              creds1 = credentials('security-API-user')
+              creds2 = credentials('security_API_user')
+            }
             steps {
                 echo "Stage 1"
                 //sh 'printenv'
