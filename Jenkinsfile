@@ -8,7 +8,7 @@ pipeline {
                withCredentials([usernamePassword(credentialsId:csCredentials.credentialsId, usernameVariable: csCredentials.usernameVariable, passwordVariable: csCredentials.passwordVariable)]) { 
                   sh "echo ${security_user}"
                   sh "echo ${security_pass}"
-                   sh "Echo With Password IS Working FINALLY!"
+                   sh "echo With Password IS Working FINALLY!"
            }
             sh 'printenv'
                 sh "echo 'Downloading CxOne CLI v${csEnvironment.cxVersion}'"
