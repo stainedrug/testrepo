@@ -5,16 +5,10 @@ pipeline {
         stage("run cxone scan"){
             steps {
                 withCredentials ([usernamePassword(credentialsId: 'APIUSERNAME', usernameVariable: 'security_user', passwordVariable: 'security_pass')]){
-                    script {
-                        try {
-                            sh '''
-                            echo $security_user 
-                            echo $security_pass
-                            '''
-                        } catch (Exception e) {
-                            echo "Error during scan upload "
-                        }
-                    }
+                    sh '''
+                        echo $security_user 
+                        echo $security_pass
+                        '''                    
                 }
             }
            //steps{
