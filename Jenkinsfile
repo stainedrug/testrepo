@@ -1,6 +1,6 @@
 @Library('mygithub') _
 pipeline {
-    agent any
+    agent { label 'linux' }
     stages {
         stage("run cxone scan"){
             steps {
