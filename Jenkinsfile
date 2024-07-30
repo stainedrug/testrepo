@@ -12,6 +12,7 @@ pipeline {
                 // }
                 sh "echo 'Downloading CxOne CLI v${csEnvironment.cxVersion}'"
                 sh "wget -O ./cxcli.tar.gz 'https://github.com/Checkmarx/ast-cli/releases/download/${csEnvironment.cxVersion}/ast-cli_${csEnvironment.cxVersion}_linux_x64.tar.gz'"
+                sh "echo Unzipping Checkmarx CLI"
                 sh "tar xzvf ./cxcli.tar.gz"
             //sh """
             //    ./cx scan create -s ${env.WORKSPACE} \
