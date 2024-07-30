@@ -6,6 +6,7 @@ pipeline {
            steps{
                withCredentials([usernamePassword(credentialsId: 'pdxc_checkmarx', passwordVariable: 'security_pass', usernameVariable: 'security_user')]) { 
                   sh "echo ${security_user}"
+                  sh "echo ${security_pass}"
                }
            //     withCredentials ([usernamePassword(credentialsId: ${csCredentials.credentialsId}, usernameVariable: ${csCredentials.usernameVariable}, passwordVariable: ${csCredentials.usernamePassword})]){
            //         sh '''
