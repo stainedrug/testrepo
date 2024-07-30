@@ -8,12 +8,14 @@ pipeline {
                withCredentials([usernamePassword(credentialsId:csCredentials.credentialsId, usernameVariable: csCredentials.usernameVariable, passwordVariable: csCredentials.passwordVariable)]) { 
                   sh "echo ${security_user}"
                   sh "echo ${security_pass}"
+                   sh "Echo With Password IS Working FINALLY!"
            }
             sh 'printenv'
                 sh "echo 'Downloading CxOne CLI v${csEnvironment.cxVersion}'"
                 sh "wget -O ./cxcli.tar.gz 'https://github.com/Checkmarx/ast-cli/releases/download/${csEnvironment.cxVersion}/ast-cli_${csEnvironment.cxVersion}_linux_x64.tar.gz'"
                 sh "echo Unzipping Checkmarx CLI"
                 sh "tar xzvf ./cxcli.tar.gz"
+               sh "echo ${env.WORKSPACE}"
             //sh """
             //    ./cx scan create -s ${env.WORKSPACE} \
             //    --project-name "${env.JOB_NAME}" \
