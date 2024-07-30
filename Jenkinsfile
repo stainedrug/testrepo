@@ -27,7 +27,7 @@ pipeline {
             //    --client-secret "${CX_CLIENT_SECRET}" \
             //    --scan-types "sast,iac-security,sca,api-security" \
             //    --report-format pdf \
-            //    --report-pdf-email luis-vicente.soto-salinas@dxc.com \
+            //    --report-pdf-email im@home.com \
             //    --wait-delay 60
             //"""
            }
