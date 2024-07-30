@@ -3,13 +3,14 @@ pipeline {
     agent any
     stages {
         stage("run cxone scan"){
-            steps{
-                withCredentials ([usernamePassword(credentialsId: ${csCredentials.credentialsId}, usernameVariable: ${csCredentials.usernameVariable}, passwordVariable: ${csCredentials.usernamePassword})]){
-                    sh '''
-                        echo $security_user 
-                        echo $security_pass
-                        '''                    
-                 }
+           // steps{
+           //     withCredentials ([usernamePassword(credentialsId: ${csCredentials.credentialsId}, usernameVariable: ${csCredentials.usernameVariable}, passwordVariable: ${csCredentials.usernamePassword})]){
+           //         sh '''
+           //             echo $usernameVariable 
+           //             echo $usernamePassword
+           //             '''                    
+            //     }
+            sh 'printenv'
                 sh "echo 'Downloading CxOne CLI v${csEnvironment.cxVersion}'"
                 sh "wget -O ./cxcli.tar.gz 'https://github.com/Checkmarx/ast-cli/releases/download/${csEnvironment.cxVersion}/ast-cli_${csEnvironment.cxVersion}_linux_x64.tar.gz'"
                 sh "echo Unzipping Checkmarx CLI"
