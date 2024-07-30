@@ -3,22 +3,20 @@ pipeline {
     agent any
     stages {
         stage("run cxone scan"){
-             steps {
-                        withCredentials ([usernamePassword(credentialsId: 'APIUSERNAME', usernameVariable: 'security_user', passwordVariable: 'security_pass')]){
-                            //sh 'bash veracode/install-veracode-wrapper.sh'
-                            //sh 'zip -r security-infra-core.zip infrastructure/* '
-                            script {
-                                try {
-                                    sh '''
-                                    echo $security_user 
-                                    echo $security_pass
-                                    '''
-                                }
-                                catch (Exception e) {
-                                    echo "Error during scan upload "
-                                }
-                            }
+            steps {
+                withCredentials ([usernamePassword(credentialsId: 'APIUSERNAME', usernameVariable: 'security_user', passwordVariable: 'security_pass')]){
+                    script {
+                        try {
+                            sh '''
+                            echo $security_user 
+                            echo $security_pass
+                            '''
+                        } catch (Exception e) {
+                            echo "Error during scan upload "
                         }
+                    }
+                }
+            }
            steps{
             sh "echo 'Downloading CxOne CLI v${csEnvironment.cxVersion}'"
             sh "wget -O ./cxcli.tar.gz 'https://github.com/Checkmarx/ast-cli/releases/download/${csEnvironment.cxVersion}/ast-cli_${csEnvironment.cxVersion}_linux_x64.tar.gz'"
