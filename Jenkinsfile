@@ -8,6 +8,7 @@ pipeline {
               //creds2 = credentials('security_API_user')
           //  }
             steps {
+                echo "Stage 1"
                 //sh 'printenv'
             }
         }
