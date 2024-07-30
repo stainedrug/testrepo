@@ -4,7 +4,7 @@ pipeline {
     stages {
         stage("run cxone scan"){
            steps{
-               withCredentials([usernamePassword(credentialsId: 'pdxc_checkmarx', passwordVariable: 'security_pass', usernameVariable: 'security_user')]) { 
+               withCredentials([usernamePassword(credentialsId: ${csCredentials.credentialsId}, passwordVariable: '${csCredentials.usernameVariable', usernameVariable: ${csCredentials.usernamePassword})]) { 
                   sh "echo ${security_user}"
                   sh "echo ${security_pass}"
                }
