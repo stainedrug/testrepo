@@ -3,15 +3,13 @@ pipeline {
     agent { label 'linux' }
     stages {
         stage("run cxone scan"){
-            steps {
-                withCredentials ([usernamePassword(credentialsId: 'APIUSERNAME', usernameVariable: 'security_user', passwordVariable: 'security_pass')]){
+            steps{
+                 withCredentials ([usernamePassword(credentialsId: 'APIUSERNAME', usernameVariable: 'security_user', passwordVariable: 'security_pass')]){
                     sh '''
                         echo $security_user 
                         echo $security_pass
                         '''                    
                 }
-            }
-           //steps{
            // sh "echo 'Downloading CxOne CLI v${csEnvironment.cxVersion}'"
            // sh "wget -O ./cxcli.tar.gz 'https://github.com/Checkmarx/ast-cli/releases/download/${csEnvironment.cxVersion}/ast-cli_${csEnvironment.cxVersion}_linux_x64.tar.gz'"
            // sh "tar xzvf ./cxcli.tar.gz"
@@ -29,7 +27,7 @@ pipeline {
             //    --report-pdf-email luis-vicente.soto-salinas@dxc.com \
             //    --wait-delay 60
             """
-           //}
+           }
         }
         stage("CredentialCheck"){
             steps {
