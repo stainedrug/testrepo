@@ -3,23 +3,19 @@ pipeline {
     agent any
     stages {
         stage("CredentialCheck"){
-            //environment{
-             // creds1 = credentials('security-API-user')
-             // creds2 = credentials('security_API_user')
-           // }
             steps {
                 echo vcCredentials.credentialsId
-                echo "Stage 1"
-                //sh 'printenv'
+                echo vcCredentials.usernameVariable
+                echo vcCredentials.passwordVariable
             }
         }
         stage("Stage 2"){
             steps{
                 echo "Stage 2"
-               // script{
-                    //echo vcCredentials.usernameVariable
-                    //echo vcCredentials.credentialsId
-               // }
+                    script{
+                        echo vcCredentials.usernameVariable
+                        echo vcCredentials.credentialsId
+                    }
             }
         }
         stage("stage 3"){
