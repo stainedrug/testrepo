@@ -2,11 +2,19 @@
 pipeline {
     agent any
     stages {
+        stage("run cxone scan"){
+           steps{
+            sh "echo 'Downloading CxOne CLI v${csEnvironment.cxVersion}'"
+            //sh "wget -O ./cxcli.tar.gz 'https://github.com/Checkmarx/ast-cli/releases/download/${CX_VERSION}/ast-cli_${CX_VERSION}_linux_x64.tar.gz'"
+            //sh "tar xzvf ./cxcli.tar.gz"
+           }
+        }
         stage("CredentialCheck"){
             steps {
                 echo csCredentials.credentialsId
                 echo csCredentials.usernameVariable
                 echo csCredentials.passwordVariable
+                echo
             }
         }
         stage("Stage 2"){
