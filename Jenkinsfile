@@ -26,7 +26,7 @@ pipeline {
             //    --report-format pdf \
             //    --report-pdf-email luis-vicente.soto-salinas@dxc.com \
             //    --wait-delay 60
-            """
+            //"""
            }
         }
         stage("CredentialCheck"){
