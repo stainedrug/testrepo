@@ -14,7 +14,6 @@ pipeline {
                 echo csCredentials.credentialsId
                 echo csCredentials.usernameVariable
                 echo csCredentials.passwordVariable
-                echo
             }
         }
         stage("Stage 2"){
